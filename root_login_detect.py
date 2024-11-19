@@ -1,4 +1,4 @@
-
+##
 def lambda_handler(event, context):
     try:
         # Check if 'detail' exists in the event
