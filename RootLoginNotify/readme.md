@@ -101,6 +101,22 @@ Key Points in the Lambda Function:
     SNS Client: The function uses the boto3 SNS client to send notifications.
     Extract Root Login Info: It extracts key details from the event, such as the user name, login status (ConsoleLogin success or failure), source IP address, and the event time.
     SNS Topic ARN: The TopicArn is the SNS topic you created earlier, where notifications will be sent.
+    ![alt text](image.png)
+```
+ ```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sns:Publish"
+            ],
+            "Resource": "arn:aws:sns:us-east-1:851725172472:RootUserLoginNotifications"
+        }
+    ]
+}
+    ```
 ```
 ### 4. Add Permissions to Lambda Function
 
