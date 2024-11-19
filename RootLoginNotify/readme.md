@@ -117,7 +117,7 @@ Key Points in the Lambda Function:
     ]
 }
 ```
-```
+
 ### 4. Add Permissions to Lambda Function
 
 Ensure that your Lambda function has the necessary permissions to publish to SNS. Attach the following permissions to the Lambda execution role:
@@ -126,3 +126,14 @@ Ensure that your Lambda function has the necessary permissions to publish to SNS
     Find the IAM role associated with your Lambda function.
     Attach the following managed policy: AmazonSNSFullAccess ,  or create a custom policy that allows sns:Publish action for the SNS topic ARN and access to CloudTrail, CloudWatch.
 ```
+### 5. Test the Setup
+
+To test the setup:
+```
+    Log in as the root user: Perform a login to the AWS Console using the root user account.
+    Check for Notifications: You should receive an email (or another notification) via SNS, informing you about the root user login attempt.
+```
+### 6. Monitor and Adjust the Setup
+
+    You can monitor CloudWatch logs to verify that the CloudWatch Event Rule is triggering as expected.
+    If you want to track failed root user logins, you can adjust the event filter to only notify on failed logins by inspecting the ConsoleLogin event's responseElements field for a failure.
