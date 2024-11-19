@@ -116,7 +116,7 @@ Key Points in the Lambda Function:
         }
     ]
 }
-    ```
+```
 ```
 ### 4. Add Permissions to Lambda Function
 
